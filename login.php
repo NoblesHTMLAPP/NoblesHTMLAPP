@@ -5,7 +5,7 @@ if(isset($_POST['Login']))
     $password = $_POST['password'];
     if($username == "admin" && $password == "mypassword")
         {
-        echo "You have successfully logged in.";
+        echo "Success";
         } else {
             echo "Login Failed";
         }
