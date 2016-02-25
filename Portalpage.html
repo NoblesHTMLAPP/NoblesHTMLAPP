@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html" charset=utf-8 />
 <script type="text/javascript" src="js/TweenLite.min.js"></script>
 <script type="text/javascript" src="js/TweenMax.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
@@ -11,7 +11,8 @@
 body{
 	background-image: url(http://www.chamberlaincompanies.com/wp-content/uploads/2013/04/IMG_7037.jpg);
 	background-size: cover;
-	overflow:auto;
+	overflow:hidden;
+	
 }
 
 #btn1{
@@ -114,7 +115,7 @@ body{
 
 <body>
 <!--buttons-->
-<div style="width:1000px; height:1200px; overflow:auto; margin: 0 auto; position:fixed;">
+<div style="max-height: 100%; max-width: 100%; overflow:hidden; margin: 0 auto; position:fixed;">
 
 	<input type="button" target="main" id="btn1" style="float:left" value="Schedule"> 
     <input type="button" target="main" id="btn2" style="float:left" value="About Me">

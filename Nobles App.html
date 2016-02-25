@@ -1,3 +1,18 @@
+var rtime = new Date(1, 1, 2000, 12,00,00);
+var timeout = false;
+var delta = 200;
+$(window).resize(function() {
+rtime = new Date();
+if (timeout === false) {
+timeout = true;
+setTimeout(resizeend, delta);
+}
+});
+function resizeend() {
+if (new Date() - rtime < delta) {
+setTimeout(resizeend, delta);
+} else {
+timeout = false;
 <html>
 <head>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
@@ -162,3 +177,19 @@ body{
 </center>
 </div>
 </html>
+sizeStuff();
+}
+}
+var w_width;
+var w_height;
+function sizeStuff()
+{
+w_width = $(window).outerWidth();
+w_height = $(window).outerHeight();
+var image_height = Math.round(w_height/7.5);
+var menu_padding = Math.round(w_height/30);
+var menu_margin = Math.round(w_height/15);
+$(".menubutton").css("padding",menu_padding);
+$(".menubutton").css("margin",menu_margin);
+// and so forth for all other elements
+}
