@@ -10,15 +10,22 @@
     [id="hello"] {
         width: 100%;
     }
-    .title {
-        
+    #header{
+        background-color: rgba(30,87,153,1);
+        text-align: center;
+        position: relative;
+        border: 4px solid black;
+        color: white;
+        padding: 20px;
+        margin-top: 0px;
     }
     #directory {
         text-align: center;
         height: 700px;
-        font-family: "Courier New", Courier, monospace;
+        font-family: sans-serif;
         background: blue;
         background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(84,143,198,1) 57%,rgba(100,160,211,0.7) 74%,rgba(125,185,232,0) 100%);
+       
         box-sizing: border-box;
     }
     
@@ -34,6 +41,16 @@
         width: 20px;
     
     }
+    body{
+        text-align: center;
+        height: 400px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        
+        
+    }
 
 
 }
@@ -45,14 +62,25 @@
 
 <body>
    <div id="directory">
-    <h1 class="title">
+    <h1 id="header"> 
         Student Directory
     </h1>
-    First Name: <input class="input-name" type="text">
-   <br><br>Last Name: <input class="input-name" type="text">
-   <br><br>Class: <input class="input-name" type="number">
-   
-   
+    <center><table>
+        <tr>
+    <td>First Name:</td>
+    <td><input class="input-name" type="text"></td>
+        </tr>
+   <tr>
+    <td>Last Name: </td>
+    <td><input class="input-name" type="text"></td>
+    </td>
+   <tr>
+    <td>Class: </td>
+    <td><input class="input-name" type="number"></td>
+   </tr>
+    </table>
+    </center>
+    
   <br> <br><input class="gender-button" type="radio" name="gender" value="All">All
    <input class="gender-button" type="radio" name="gender" value="Male">Male
    <input class="gender-button" type="radio" name="gender" value="Female">Female
