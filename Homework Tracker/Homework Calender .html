@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>HOMEWORK CALENDER</title>
+</head>
+<style>
+    #header{
+        background-color: rgba(30,87,153,1);
+        text-align: center;
+        position: relative;
+        border: 4px solid black;
+        color: white;
+        padding: 20px;
+        margin-top: 0px;
+    } 
+    #hw-calender{
+        text-align: center;
+        height: 700px;
+        font-family: sans-serif;
+        background: blue;
+        background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(84,143,198,1) 57%,rgba(100,160,211,0.7) 74%,rgba(125,185,232,0) 100%);
+       box-sizing: border-box;
+    }
+    body{
+        text-align: center;
+        height: 400px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+    .dropdown {
+        border-radius: 10px;
+        background: white;
+        width: 400px;
+        height: 50px;
+        border: 1px solid black;
+        font-size: 20px;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+    $(".ex .hide").click(function(){
+        $(this).parents(".ex").hide();
+    });
+});
+</script>
+
+
+<body>
+<div id="hw-calender">
+    <div id="header">
+        <h1 style="color: white">Homework Calender</h1>
+    </div>
+    <table>
+        <div class="ex">
+        <tr><button id="hide" class="dropdown">BlockA</button></tr>
+        <p></p>
+        </div>
+        <div class="ex">
+        <tr><button id="hide" class="dropdown">BlockB</button></tr>
+        <p></p>
+        </div>
+        <tr><button id="hide" class="dropdown">BlockC</button></tr>
+        <p></p>
+        <tr><button id="hide" class="dropdown">BlockD</button></tr>
+        <p></p>
+        <tr><button id="hide" class="dropdown">BlockE</button></tr>
+        <p></p>
+        <tr><button id="hide" class="dropdown">BlockF</button></tr>
+        <p></p>
+        <tr><button id="hide" class="dropdown">BlockG</button></tr>
+        <p></p>
+        
+    </table>
+   
+</div>
+
+
+</body>
+</html>
