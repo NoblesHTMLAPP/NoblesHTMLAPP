@@ -1,8 +1,8 @@
 <html>
 <body>
 
-<?php echo $_POST["description"]; ?><br>
-<?php echo $_POST["image"]; ?>
+Welcome <?php echo $_POST["Descpription"]; ?><br>
+Image: <?php echo $_POST["Image"]; ?>
 
 </body>
 </html>
