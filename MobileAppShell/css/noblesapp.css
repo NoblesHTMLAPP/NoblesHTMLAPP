@@ -1,0 +1,44 @@
+li h3 {
+	    background-color: #bdd9ed; 
+	    width: 100%;  
+	    height: 50px;
+	    vertical-align: text-middle;
+}
+//hi
+.errorMsg {
+    text-align: left;
+    color: red;
+    font-weight: bold;
+}
+
+#loadingScreen {
+    background: url(../images/image_805105.gif) no-repeat 5px 8px;
+    padding-left: 25px;
+}
+
+.loadingScreenWindow .ui-dialog-titlebar {
+    display: none;
+}
+
+.loadingScreenText {
+    font-size: 8px;
+    text-align:left;
+  }
+  
+  
+.eventcalendar					{width:500px;display:inline-block;position:relative;z-index:999998;cursor:pointer;background:#f7f7f7;font-family:"Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;color:#333!important;font-size:15px;border:1px solid #cfcfcf;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.15);-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.15);box-shadow:1px 1px 3px rgba(0,0,0,0.15);-webkit-border-radius:2px;border-radius:2px;}
+.eventcalendar .date 				{width:60px;height:60px;float:left;position:relative;}
+.eventcalendar .date .mon 			{display:block;text-align:center;padding:9px 0px 0px 0px;font-size:11px;color:#bf5549;font-weight:bold;line-height:110%;text-transform:uppercase;}
+.eventcalendar .date .day 			{display:block;text-align:center;padding:0px 0px 8px 0px;font-size:30px;font-weight:bold;color:#333;line-height:100%;}
+.eventcalendar .date .bdr1 			{width:1px;height:50px;background:#eaeaea;position:absolute;z-index:100;top:5px;right:-3px;}
+.eventcalendar .date .bdr2 			{width:1px;height:50px;background:#fff;position:absolute;z-index:100;top:5px;right:-4px;}
+.eventcalendar .desc 				{width:400px;height:60px;float:left;position:relative;}
+.eventcalendar .desc p 				{margin:0;display:block;text-align:left;padding:7px 0px 0px 18px;font-size:12px;color:#666;line-height:110%;}
+.eventcalendar .desc .hed 			{height:15px;display:block;overflow:hidden;margin-bottom:3px;font-size:14px;line-height:110%;color:#333;text-transform:uppercase;}
+.eventcalendar .desc .des 			{height:28px;display:block;overflow:hidden;}
+
+li p {
+    white-space: normal;
+}
+
+
