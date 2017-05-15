@@ -18,6 +18,38 @@
 <link rel="apple-touch-icon" sizes="72x72" href="favicon.png?v=1" />
 
 <body>
+	
+<?php function getItems(){
+    
+    
+    $link = mysql_connect('127.0.0.1');
+	if (!$link) {
+    	die('Could not connect: ' . mysql_error());
+	}
+	mysql_select_db('LostandFound', $link) or die('Could not select database.');
+	$res = mysql_query("SELECT * from items where claimed=0", $link);
+	if (!$res) {
+    $message  = 'Invalid query: ' . mysql_error() . "\n";
+    $message .= 'Whole query: ' . $query;
+    die($message);
+	}
+	
+	
+	while ($row = mysql_fetch_assoc($res)) 
+	{
+
+//1/6/17
+    	// Changes 1/18/17<
+    	echo '<li date-iconpos="right" data-icon="arrow-r" data-value="' .$row{'id'}.'" class="studentName"><a href="#">'.$row{'Type'}." ".$row{'FirstName'}." ".$row{'LastName'}." ".$row{'gradyear'}." ".'</a></li>';
+    	//  1/18/17>
+	}
+	
+	mysql_free_result($result);
+	
+	mysql_close($link);
+}
+
+?>
 
 <form action=":action_page.php" method=post>
   Description:<br>
