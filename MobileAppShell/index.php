@@ -27,7 +27,7 @@ function getStudents(){
     	die('Could not connect: ' . mysql_error());
 	}
 	mysql_select_db('LostandFound', $link) or die('Could not select database.');
-	$res = mysql_query("SELECT * from Students where isPresent=0", $link);
+	$res = mysql_query("SELECT * from Items where claimed=0", $link);
 	if (!$res) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
