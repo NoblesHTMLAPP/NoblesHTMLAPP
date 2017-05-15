@@ -56,7 +56,7 @@
   <input type="text" value="Description" placeholder="write your description here...">
   <br>
   Image: <br>
-  <input type="file" value="Image" placeholder="attach picture of missing image">
+  <input type="file" value="Image" placeholder= getItems >
   <br>
   <input type="submit" value="Submit">
 </form> 
