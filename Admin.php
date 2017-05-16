@@ -18,26 +18,15 @@
 <link rel="apple-touch-icon" sizes="72x72" href="favicon.png?v=1" />
 <?php
 
-<<<<<<< HEAD
 require_once("includes/session.php");
-function getImage(){
-=======
-<body>
-	
-<?php function getItems(){
->>>>>>> parent of a477a8f... carnage
-    
-    
+
+function getImage(){   
     $link = mysql_connect('127.0.0.1');
 	if (!$link) {
     	die('Could not connect: ' . mysql_error());
 	}
 	mysql_select_db('LostandFound', $link) or die('Could not select database.');
-<<<<<<< HEAD
 	$res = mysql_query("SELECT Image from Items WHERE  id = 1 ", $link);
-=======
-	$res = mysql_query("SELECT * from items where claimed=0", $link);
->>>>>>> parent of a477a8f... carnage
 	if (!$res) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
@@ -47,15 +36,8 @@ function getImage(){
 	
 	while ($row = mysql_fetch_assoc($res)) 
 	{
-<<<<<<< HEAD
-    	echo '<li>'.$row{'Image'}." ".'</a></li>';
-=======
 
-//1/6/17
-    	// Changes 1/18/17<
-    	echo '<li date-iconpos="right" data-icon="arrow-r" data-value="' .$row{'id'}.'" class="studentName"><a href="#">'.$row{'Type'}." ".$row{'FirstName'}." ".$row{'LastName'}." ".$row{'gradyear'}." ".'</a></li>';
-    	//  1/18/17>
->>>>>>> parent of a477a8f... carnage
+    	echo '<li>'.$row{'Image'}." ".'</a></li>';
 	}
 	
 	mysql_free_result($result);
