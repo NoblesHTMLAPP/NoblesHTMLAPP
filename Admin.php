@@ -19,7 +19,7 @@
 
 <body>
 	
-<?php function getItems(){
+<?php function getImage(){
     
     
     $link = mysql_connect('127.0.0.1');
@@ -27,7 +27,7 @@
     	die('Could not connect: ' . mysql_error());
 	}
 	mysql_select_db('LostandFound', $link) or die('Could not select database.');
-	$res = mysql_query("SELECT * from items where claimed=0", $link);
+	$res = mysql_query("SELECT Image from Items WHERE  id = ", $link);
 	if (!$res) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
@@ -40,7 +40,7 @@
 
 //1/6/17
     	// Changes 1/18/17<
-    	echo '<li date-iconpos="right" data-icon="arrow-r" data-value="' .$row{'id'}.'" class="studentName"><a href="#">'.$row{'Type'}." ".$row{'FirstName'}." ".$row{'LastName'}." ".$row{'gradyear'}." ".'</a></li>';
+    	echo '<li>'.$row{'Image'}." ".'</a></li>';
     	//  1/18/17>
 	}
 	
