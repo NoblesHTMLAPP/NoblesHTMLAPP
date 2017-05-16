@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
+</head>
+<body>
+
 <?php
-
-require_once("includes/session.php");
-
-function getImage(){   
-    $link = mysql_connect('127.0.0.1');
-	if (!$link) {
-    	die('Could not connect: ' . mysql_error());
-	}
-	mysql_select_db('LostandFound', $link) or die('Could not select database.');
-	$res = mysql_query("SELECT Image from Items WHERE id = 1 ", $link);
-	if (!$res) {
-    $message  = 'Invalid query: ' . mysql_error() . "\n";
-    $message .= 'Whole query: ' . $query;
-    die($message);
-	}
-	
-	
-	while ($row = mysql_fetch_assoc($res)) 
+echo 'here<br>';
+$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
+echo 'after connect<br>';
+	if (!$link)
 	{
-
-    	echo '<li>'.$row{'Image'}." ".'</li>';
+		echo 'here';
+    	die('Could not connect: ' . mysqli_error());
 	}
-	
-	mysql_free_result($result);
-	
-	mysql_close($link);
+
+echo 'connected<br>';
+
+
+$sql = "SELECT * from Items";
+
+$query = mysqli_query($link, $sql);
+
+if (!$query) {
+   die ('SQL Error: ' . mysqli_error($link));
 }
+
+echo '<table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Claimed</th>
+
+            </tr>
+        </thead>
+        <tbody>';
+
+    while($row = mysqli_fetch_array($query)) {
+       echo '<tr>
+            <td>'.$row['id'].'</td>
+            <td>'.$row['long_description'].'</td>
+            <td>'.$row['claimed'].'</td>
+
+        </tr>';
+    }
+  echo '
+    </tbody>
+</table>';
+ 
 ?>
 
-
-<?php
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "LostandFound";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "SELECT * from Items WHERE id = 1";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Description: ". $row["long_description"]. " - Image" . $row["Image"] . "<br>";
-    }
-} else {
-    echo "0 results";
-}
-
-$conn->close();
-
-?> 
-
 </body>
-
-
 </html>
-
