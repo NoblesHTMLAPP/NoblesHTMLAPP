@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="https://demos.jquerymobile.com/1.4.0/theme-classic/theme-classic.css" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" />
-<link rel="stylesheet" href="css/noblesapp.css?v=36" />
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
-<script src="jquery/noblesapp.js?v=49"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-<link rel="apple-touch-icon" sizes="72x72" href="favicon.png?v=1" />
-
 <?php
 
 require_once("includes/session.php");
@@ -27,7 +11,7 @@ function getImage(){
     	die('Could not connect: ' . mysql_error());
 	}
 	mysql_select_db('LostandFound', $link) or die('Could not select database.');
-	$res = mysql_query("SELECT Image from Items WHERE  id = 1 ", $link);
+	$res = mysql_query("SELECT Image from Items WHERE id = 1 ", $link);
 	if (!$res) {
     $message  = 'Invalid query: ' . mysql_error() . "\n";
     $message .= 'Whole query: ' . $query;
@@ -38,65 +22,48 @@ function getImage(){
 	while ($row = mysql_fetch_assoc($res)) 
 	{
 
-    	echo '<li>'.$row{'Image'}." ".'</a></li>';
+    	echo '<li>'.$row{'Image'}." ".'</li>';
 	}
 	
 	mysql_free_result($result);
 	
 	mysql_close($link);
 }
-
-
-session_start();
-
 ?>
-	
-	<head>
-		
 
-		</head>
-	<body>
-		
-        
-		<div>
-		<div> 
-		
-		<div>
-	      <div>
-		     <ul>
-		        <li><a href="#">Jacket</a></li>
-		        <li><a href="#">Water Bottle</a></li>
-		     </ul>
-		 </div>
-	    </div>
-		 
-		 <div>
-	     </div>
-		
-	
-		</div>
-		  			
-			
-			<div>
-			<div>
-			<ul>
-			
-		<?php
-		   	echo getImage();
-		?>			
-		</ul>
-			</div>
-			</div><!-- /content -->
-			<div 
-		    </div>
 
-	
- 			
-		</div><!-- /page -->
+<?php
 
-	</body>
-<script>
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "LostandFound";
 
-</script>
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * from Items WHERE id = 1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> id: ". $row["id"]. " - Description: ". $row["long_description"]. " - Image" . $row["Image"] . "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+
+?> 
+
+</body>
+
+
 </html>
 
