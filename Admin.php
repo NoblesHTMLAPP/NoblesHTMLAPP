@@ -127,7 +127,6 @@ echo '<table>
 					<option value='29'>29</option>
 					<option value='30'>30</option>
 					<option value='31'>31</option>
-
 	         </select>
 		 <br/>
 	</div>
