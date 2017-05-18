@@ -5,16 +5,16 @@
 <body>
 
 <?php
-echo 'here<br>';
+
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
-echo 'after connect<br>';
+
 	if (!$link)
 	{
 		echo 'here';
     	die('Could not connect: ' . mysqli_error());
 	}
 
-echo 'connected<br>';
+
 
 
 $sql = "SELECT * from Items";
@@ -44,10 +44,6 @@ echo '<table>
 
         </tr>';
     }
-  echo '
-    </tbody>
-</table>';
- 
 ?>
 
 </body>
