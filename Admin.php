@@ -78,31 +78,23 @@ echo '<table>
 
 <!-- HTML Form -->
 
-<form method="POST" action="#">
+<form method="POST" action=":action_page.php">
 	<div class="input" type="text">
 		<label for="short_description">Item Category:</label><br/>
-		<select>
+		<select name="short-description">
 			<option value="Jacket">Jacket</option>
 			<option value="Water Bottle">Water Bottle</option>
 		</select> <br/>
 	</div>
 	<div class="input" type="text">
-		<label for="long_description">Item Description:</label><br/>
+		<label>Item Description:</label><br/>
 		<input id="description" name="long_description" type="text" value="" size="30" /> <br/>
-<? php
-		$sql = '"INSERT INTO" `Items` (short_description, long_description)';
-		values ("coat");
-$query = mysqli_query($link, $sql);
-if (!$query) {
-   die ('SQL Error: ' . mysqli_error($link));
-}
-?>
-		<label for="image">image:</label><br/>
-		<input type="file" accept="image/*" capture="camera" />
+		<label">image:</label><br/>
+		<input type="file" name="image" accept="image/*" capture="camera" />
 	</div>
 	<div class="input" class="date">
-		<label for="Date found">Date Found:</label><br/>
-		 <select name='month' class="date">
+		<label>Date Found:</label><br/>
+		 <select name='month'>
 	                <option value=' ' selected='selected'> </option>
 	                <option value='1'>1</option>
 					<option value='2'>2</option>
@@ -117,7 +109,7 @@ if (!$query) {
 					<option value='11'>11</option>
 					<option value='12'>12</option>      
 	            </select>
-		<select name='day' class="date">
+		<select name='day'>
 					<option value=' ' selected='selected'> </option>
 					<option value='1'>1</option>
 					<option value='2'>2</option>
