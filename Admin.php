@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-<link rel="stylesheet" href="https://demos.jquerymobile.com/1.4.0/theme-classic/theme-classic.css" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" />
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css" />
-<link rel="stylesheet" href="css/noblesapp.css?v=36" />
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3&sensor=false&language=en"></script>
-<script src="jquery/noblesapp.js?v=49"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-<link rel="apple-touch-icon" sizes="72x72" href="favicon.png?v=1" />
+
 
 <style>
-div {
-	width: 500px;
-	align-content: center;
-	table-layout: auto
+	input[type=text], select {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+	input[type=submit] {
+    width: 100%;
+    background-color: rgb(50,0,250);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(50,0,180);
+}
+.input {
+	color: rgb(0,0,0);
+	font-family: monospace;
+}
+body {
+	color: white;
+	text-align: center;
+	width: 100%;
 }
 
 .date {
@@ -33,7 +46,7 @@ div {
 <body>
 
 
-<?php /*
+<?php
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 	if (!$link)
 	{
@@ -60,24 +73,34 @@ echo '<table>
             <td>'.$row['claimed'].'</td>
         </tr>';
     }
-*/?>
+?>
 
 
 <!-- HTML Form -->
 
 <form method="POST" action="#">
-	<div class="row">
-		<label for="short_descroption">Item Category:</label><br />
+	<div class="input" type="text">
+		<label for="short_description">Item Category:</label><br/>
 		<select>
 			<option value="Jacket">Jacket</option>
 			<option value="Water Bottle">Water Bottle</option>
 		</select> <br/>
 	</div>
-	<div class="row">
-		<label for="long_descpription">Item Descpription:</label><br/>
+	<div class="input" type="text">
+		<label for="long_description">Item Description:</label><br/>
 		<input id="description" name="long_description" type="text" value="" size="30" /> <br/>
+<? php
+		$sql = '"INSERT INTO" `Items` (short_description, long_description)';
+		values ("coat");
+$query = mysqli_query($link, $sql);
+if (!$query) {
+   die ('SQL Error: ' . mysqli_error($link));
+}
+?>
+		<label for="image">image:</label><br/>
+		<input type="file" accept="image/*" capture="camera" />
 	</div>
-	<div class="row" class="date">
+	<div class="input" class="date">
 		<label for="Date found">Date Found:</label><br/>
 		 <select name='month' class="date">
 	                <option value=' ' selected='selected'> </option>
@@ -130,11 +153,10 @@ echo '<table>
 	         </select>
 		 <br/>
 	</div>
-	<div class="row">
+	<div class="input" type="submit">
 		<input id="submit_button" type="submit" value="Submit Item" />
 	</div>
 </form>						
 
-</div>
 </body>
 </html>
