@@ -3,6 +3,8 @@
 <body>
 
 <?php
+
+
 	$shortDesc = $_POST["short_description"];
 	$longDesc = $_POST["long_description"];
 	$image = $_POST["image"];
@@ -13,12 +15,13 @@
 		echo 'here';
     	die('Could not connect: ' . mysqli_error());
 	}
-		$sql = "SELECT * from Items";
-		$sql = '"INSERT INTO" Items ("shortDesc", "longDesc", "image", "dateFound")';
+		$sql = " INSERT INTO Items (short_description, long_description, claimed, date_found, Image)
+		values('shortDesc', 'longDesc', '0', 'image', 'dateFound')";
 	$query = mysqli_query($link, $sql);
 	if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
 	}
+
 ?>
 </body>
 </html>

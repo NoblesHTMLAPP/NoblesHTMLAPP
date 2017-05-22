@@ -45,7 +45,7 @@ body {
 </head>
 <body>
 
-
+// connects to mysql server
 <?php
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 	if (!$link)
@@ -58,6 +58,7 @@ $query = mysqli_query($link, $sql);
 if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
 }
+//reports a table with values of database
 echo '<table>
         <thead>
             <tr>
@@ -74,27 +75,27 @@ echo '<table>
         </tr>';
     }
 ?>
-
+//b
 
 <!-- HTML Form -->
 
 <form method="POST" action=":action_page.php">
 	<div class="input" type="text">
-		<label for="short_description">Item Category:</label><br/>
-		<select name="short-description">
-			<option value="Jacket">Jacket</option>
-			<option value="Water Bottle">Water Bottle</option>
+	Item Category:<br/>
+		<input name="short_description">
+			<!--<option value="Jacket">Jacket</option>
+			<option value="Water Bottle">Water Bottle</option>-->
 		</select> <br/>
 	</div>
 	<div class="input" type="text">
-		<label>Item Description:</label><br/>
+		Item Description:<br/>
 		<input id="description" name="long_description" type="text" value="" size="30" /> <br/>
-		<label">image:</label><br/>
+		Image:<br/>
 		<input type="file" name="image" accept="image/*" capture="camera" />
 	</div>
 	<div class="input" class="date">
-		<label>Date Found:</label><br/>
-		 <select name='month'>
+		Date Found: <br/>
+		 <select type='select' name='month'>
 	                <option value=' ' selected='selected'> </option>
 	                <option value='1'>1</option>
 					<option value='2'>2</option>
@@ -109,7 +110,7 @@ echo '<table>
 					<option value='11'>11</option>
 					<option value='12'>12</option>      
 	            </select>
-		<select name='day'>
+		<select type='select' name='day'>
 					<option value=' ' selected='selected'> </option>
 					<option value='1'>1</option>
 					<option value='2'>2</option>
@@ -145,6 +146,11 @@ echo '<table>
 	         </select>
 		 <br/>
 	</div>
+	<div class="input" type="text">
+		Claimed:<br/>
+		<input name="claimed" type="radio" value='yes'>Yes<br/>
+		<input name="claimed" type="radio" value='no'>No<br/>
+		</div>
 	<div class="input" type="submit">
 		<input id="submit_button" type="submit" value="Submit Item" />
 	</div>
