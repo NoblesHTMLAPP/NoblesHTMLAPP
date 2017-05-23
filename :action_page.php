@@ -12,7 +12,11 @@
 	$shortDesc = $_POST["short_description"];
 	$longDesc = $_POST["long_description"];
 	$image = $_POST["image"];
+<<<<<<< Updated upstream
 	$dateFound = $_POST["date"];
+=======
+	// $dateFound = $_POST["month" . "-" . "day"];
+>>>>>>> Stashed changes
 	$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 
 	if (!$link)
