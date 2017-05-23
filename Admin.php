@@ -15,7 +15,7 @@
 	}
 	input[type=submit] {
     width: 100%;
-    background-color: rgb(50,0,250);
+    background-color: rgb(50,0,180);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -45,7 +45,7 @@ body {
 </head>
 <body>
 
-// connects to mysql server
+<!--connects to mysql server-->
 <?php
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 	if (!$link)
@@ -97,18 +97,18 @@ echo '<table>
 		Date Found: <br/>
 		 <select type='select' name='month'>
 	                <option value=' ' selected='selected'> </option>
-	                <option value='1'>1</option>
-					<option value='2'>2</option>
-					<option value='3'>3</option>
-					<option value='4'>4</option>
-					<option value='5'>5</option>
-					<option value='6'>6</option>
-					<option value='7'>7</option>
-					<option value='8'>8</option>
-					<option value='9'>9</option>
-					<option value='10'>10</option>
-					<option value='11'>11</option>
-					<option value='12'>12</option>      
+	                <option value='January'>January</option>
+					<option value='February'>February</option>
+					<option value='March'>March</option>
+					<option value='April'>April</option>
+					<option value='May'>May</option>
+					<option value='June'>June</option>
+					<option value='July'>July</option>
+					<option value='August'>August</option>
+					<option value='September'>September</option>
+					<option value='October'>October</option>
+					<option value='November'>November</option>
+					<option value='December'>December</option>      
 	            </select>
 		<select type='select' name='day'>
 					<option value=' ' selected='selected'> </option>
