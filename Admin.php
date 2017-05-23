@@ -5,13 +5,14 @@
 
 <style>
 	input[type=text], select {
-    width: 100%;
+    width: 50%;
     padding: 14px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+	text-align: center;
 	}
 	input[type=submit] {
     width: 100%;
@@ -22,6 +23,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+	
 }
 
 input[type=submit]:hover {
@@ -83,9 +85,21 @@ body {
 	<div class="input" type="text">
 	Item Category:<br/>
 		<select name='short_description'>
+			<option value="Bag">Bag</option>			
+			<option value="Backpack">Backpack</option>
+			<option value="Binder">Binder</option>
+			<option value="Book">Book</option>
 			<option value="Jacket">Jacket</option>
+			<option value="Pants">Pants</option>
+			<option value="Shirt">Shirt</option>
 			<option value="Water Bottle">Water Bottle</option>
+			<option value="Other">Other</option>
 		</select> <br/>
+	</div>
+	<div class="input" type="text">
+		If Other: <br/>
+		<input id="description" name="short_description" type="text" value="" size="30" /> <br/>
+		
 	</div>
 	<div class="input" type="text">
 		Item Description:<br/>
