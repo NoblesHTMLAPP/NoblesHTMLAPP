@@ -62,6 +62,7 @@ if (!$query) {
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
+			<td><input '.$row[''].' type=submit value=Claimed></td>
         </tr>';
     }
 ?>
