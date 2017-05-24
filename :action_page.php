@@ -53,7 +53,6 @@ if (!$query) {
 	echo '<table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Type</th>
 				<th>Description</th>
 				<th>Date Found</th>
@@ -63,12 +62,10 @@ if (!$query) {
         </thead>';
     while($row = mysqli_fetch_array($query)) {
        echo '<tr>
-            <td>'.$row['id'].'</td>
 			<td>'.$row['short_description'].'</td>
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-            <td>'.$row['claimed'].'</td>
         </tr>';
     }
 ?>

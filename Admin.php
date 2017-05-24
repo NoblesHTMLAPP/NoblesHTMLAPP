@@ -58,12 +58,10 @@ $query = mysqli_query($link, $sql);
 if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
 }
-$radio = '<label><input type= radio value="yes"> Yes</label>';
 //reports a table with values of database
 	echo '<table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Type</th>
 				<th>Description</th>
 				<th>Date Found</th>
@@ -74,13 +72,11 @@ $radio = '<label><input type= radio value="yes"> Yes</label>';
         </thead>';
     while($row = mysqli_fetch_array($query)) {
        echo '<tr>
-            <td>'.$row['id'].'</td>
 			<td>'.$row['short_description'].'</td>
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-            <td>'.$row['claimed'].'</td>
-			<td>'.$row['$radio'].'</td>
+			<td><input type=button value=Claimed'.$row['Claimed'].'></td>
 			</tr>';
     }
 ?>
@@ -110,12 +106,12 @@ $radio = '<label><input type= radio value="yes"> Yes</label>';
 		Date Found: <br/>
 		<input type="text" name="date" placeholder="mm-dd-yyyy">
 	</div>
-<!--	claimed input-->
+<!--claimed input
 	<div>
 		Claimed:<br/>
 		<input name="claimed" type="radio" value='yes'>Yes<br/>
 		<input name="claimed" type="radio" value='no'>No<br/>
-		</div>
+		</div>-->
 <!--	submit button-->
 	<div class="input" type="submit">
 		<input id="submit_button" type="submit" value="Submit Item" />
