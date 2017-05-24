@@ -76,7 +76,6 @@ if (!$query) {
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-			<td><input type=button value=Claimed'.$row['Claimed'].'></td>
 			</tr>';
     }
 ?>
