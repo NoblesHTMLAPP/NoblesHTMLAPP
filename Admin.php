@@ -50,7 +50,6 @@ body {
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 	if (!$link)
 	{
-		echo 'here';
     	die('Could not connect: ' . mysqli_error());
 	}
 $sql = "SELECT * from Items";

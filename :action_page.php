@@ -19,8 +19,8 @@
 	{
     	die('Could not connect: ' . mysqli_error());
 	}
-		$sql = " INSERT INTO Items (short_description, long_description, claimed, date_found, Image)
-		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image'";
+		$sql = "INSERT INTO Items (short_description, long_description, claimed, date_found, Image)
+		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image')";
 	$query = mysqli_query($link, $sql);
 	if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
