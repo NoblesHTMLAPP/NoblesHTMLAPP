@@ -12,6 +12,10 @@
 	$longDesc = $_POST["long_description"];
 	$image = $_POST["image"];
 	$dateFound = $_POST["date"];
+<<<<<<< Updated upstream
+=======
+	$dateFound = $_POST["month" . "-" . "day"];
+>>>>>>> Stashed changes
 	$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 		
 
@@ -20,7 +24,7 @@
     	die('Could not connect: ' . mysqli_error());
 	}
 		$sql = " INSERT INTO Items (short_description, long_description, claimed, date_found, Image)
-		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image')";
+		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image'";
 	$query = mysqli_query($link, $sql);
 	if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
