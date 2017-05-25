@@ -4,6 +4,7 @@
 
 <body>
 <?php
+echo 'here';
 $link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
 	if (!$link)
 	{
