@@ -62,7 +62,7 @@ if (!$query) {
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-			<td><form method = POST action = "delete_row.php"><input '.$row[''].' type=submit value=Claimed> </form></td>
+			<td><input '.$row[''].' type=submit value=Claimed></td>
         </tr>';
     }
 ?>
