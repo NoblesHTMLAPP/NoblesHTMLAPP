@@ -123,11 +123,6 @@ if (!$query) {
 <!--	Long description input-->
 	</div>
 	<div class="input" type="text">
-		If Other: <br/>
-		<input id="description" name="short_description" type="text" value="" size="30" /> <br/>
-		
-	</div>
-	<div class="input" type="text">
 		Item Description:<br/>
 		<input id="description" name="long_description" type="text" value="" size="30" /> <br/>
 	<!--	Image input-->
