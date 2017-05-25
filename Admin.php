@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <html>
 <head>
 
@@ -49,39 +49,64 @@ body {
 
 <!--connects to mysql server-->
 <?php
-//$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
+$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
+	if (!$link)
+	{
+    	die('Could not connect: ' . mysqli_error());
+	}
+$sql = "SELECT * from Items";
+$query = mysqli_query($link, $sql);
+if (!$query) {
+   die ('SQL Error: ' . mysqli_error($link));
+}
+//reports a table with values of database
+	echo '<table>
+        <thead>
+            <tr>
+                <th>Type</th>
+				<th>Description</th>
+				<th>Date Found</th>
+				<th>Image</th>
+                <th>Claimed?</th>
+				<th>
+            </tr>
+        </thead>';
+    while($row = mysqli_fetch_array($query)) {
+       echo '<tr>
+			<td>'.$row['short_description'].'</td>
+            <td>'.$row['long_description'].'</td>
+			<td>'.$row['date_found'].'</td>
+			<td>'.$row['Image'].'</td>
+			<td><form method="POST" action = "delete_row.php"><input '.$row[''].' type=submit value=Claimed onclick="delete_row"></form></td>
+			</tr>';
+    }
+//	function delete_row(){
+//		$shortDesc = $_POST["short_description"];
+//	$longDesc = $_POST["long_description"];
+//	$image = $_POST["image"];
+//	$dateFound = $_POST["date"];
+//	$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
+//	$claimed_id = 
+//		
+//
 //	if (!$link)
 //	{
-//		echo 'here';
 //    	die('Could not connect: ' . mysqli_error());
 //	}
-//$sql = "SELECT * from Items";
-//$query = mysqli_query($link, $sql);
-//if (!$query) {
+//		$sql = "DELETE FROM Items id='$claimed_id''
+//		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image')";
+//	$query = mysqli_query($link, $sql);
+//	if (!$query) {
 //   die ('SQL Error: ' . mysqli_error($link));
-//}
-//reports a table with values of database
-//	echo '<table>
-//        <thead>
-//            <tr>
-//                <th>ID</th>
-//                <th>Description</th>
-//                <th>Claimed</th>
-//            </tr>
-//        </thead>';
-//    while($row = mysqli_fetch_array($query)) {
-//       echo '<tr>
-//            <td>'.$row['id'].'</td>
-//            <td>'.$row['long_description'].'</td>
-//            <td>'.$row['claimed'].'</td>
-//        </tr>';
-//    }
+//	}
+//	}
 ?>
 
 
 <!-- HTML Form -->
 
 <form method="POST" action=":action_page.php">
+<!--	short description input-->
 	<div class="input" type="text">
 	Item Category:<br/>
 		<select name='short_description'>
@@ -95,6 +120,7 @@ body {
 			<option value="Water Bottle">Water Bottle</option>
 			<option value="Other">Other</option>
 		</select> <br/>
+<!--	Long description input-->
 	</div>
 	<div class="input" type="text">
 		If Other: <br/>
@@ -104,23 +130,26 @@ body {
 	<div class="input" type="text">
 		Item Description:<br/>
 		<input id="description" name="long_description" type="text" value="" size="30" /> <br/>
+	<!--	Image input-->
 		Image:<br/>
 		<input type="file" name="image" accept="image/*" capture="camera" />
 	</div>
+<!--	Date input-->
 	<div>
 		Date Found: <br/>
-		<input type="date" name="date" placeholder="mm-dd-yyyy">
+		<input type="text" name="date" placeholder="mm-dd-yyyy">
 	</div>
+<!--claimed input
 	<div>
 		Claimed:<br/>
 		<input name="claimed" type="radio" value='yes'>Yes<br/>
 		<input name="claimed" type="radio" value='no'>No<br/>
-		</div>
+		</div>-->
+<!--	submit button-->
 	<div class="input" type="submit">
 		<input id="submit_button" type="submit" value="Submit Item" />
 	</div>
 </form>
-
 		
 </body>
 </html>
