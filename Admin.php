@@ -75,7 +75,7 @@ if (!$query) {
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-			<td><input '.$row[''].' type=submit value=Claimed onclick="delete_row"></td>
+			<td><form method="POST" action = "delete_row.php"><input '.$row[''].' type=submit value=Claimed onclick="delete_row"></form></td>
 			</tr>';
     }
 //	function delete_row(){
