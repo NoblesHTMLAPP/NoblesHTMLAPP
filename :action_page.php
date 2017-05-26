@@ -64,10 +64,9 @@ if (!$query) {
 <div>
 	<form method="GET">
 		<input name='item#' type=text placeholder='Item Number'>
-		<input type=submit value='Mark Item as Claimed' onclick='delete();' >
+		<input type=submit value='Mark Item as Claimed'>
 	
 <?php
-function delete(){
 $itemNum = $_GET["item#"];
 if (!$link)
 	{
@@ -78,7 +77,9 @@ if (!$link)
 	if (!$query) {
    die ('SQL Error: ' . mysqli_error($link));
 	}
-}
+	if(isset($_GET['item#'])){
+		echo "<meta http-equiv='refresh' content='0'>";
+	}
 ?>
 </form>
 </div>
