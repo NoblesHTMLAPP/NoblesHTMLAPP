@@ -80,26 +80,6 @@ if (!$query) {
 			<td><form method="POST" action = "delete_row.php"><input '.$row[''].' type=submit value=Claimed onclick="delete_row"></form></td>
 			</tr>';
     }
-//	function delete_row(){
-//		$shortDesc = $_POST["short_description"];
-//	$longDesc = $_POST["long_description"];
-//	$image = $_POST["image"];
-//	$dateFound = $_POST["date"];
-//	$link = mysqli_connect('localhost', 'root', 'root', 'LostandFound');
-//	$claimed_id = 
-//		
-//
-//	if (!$link)
-//	{
-//    	die('Could not connect: ' . mysqli_error());
-//	}
-//		$sql = "DELETE FROM Items id='$claimed_id''
-//		values('$shortDesc', '$longDesc', '$claimed', '$dateFound', '$image')";
-//	$query = mysqli_query($link, $sql);
-//	if (!$query) {
-//   die ('SQL Error: ' . mysqli_error($link));
-//	}
-//	}
 ?>
 
 
@@ -134,12 +114,6 @@ if (!$query) {
 		Date Found: <br/>
 		<input type="text" name="date" placeholder="mm-dd-yyyy">
 	</div>
-<!--claimed input
-	<div>
-		Claimed:<br/>
-		<input name="claimed" type="radio" value='yes'>Yes<br/>
-		<input name="claimed" type="radio" value='no'>No<br/>
-		</div>-->
 <!--	submit button-->
 	<div class="input" type="submit">
 		<input id="submit_button" type="submit" value="Submit Item" />

@@ -3,11 +3,6 @@
 <body>
 <?php
 
-	if($_POST["claimed"] = "yes") {
-			$claimed = Yes;
-	} else {
-			$claimed = No;
-	}
 	$shortDesc = $_POST["short_description"];
 	$longDesc = $_POST["long_description"];
 	$image = $_POST["image"];
@@ -49,25 +44,45 @@ if (!$query) {
 	echo '<table>
         <thead>
             <tr>
+				<th>Item Number</th>
                 <th>Type</th>
 				<th>Description</th>
 				<th>Date Found</th>
 				<th>Image</th>
-                <th>Claimed?</th>
             </tr>
         </thead>';
     while($row = mysqli_fetch_array($query)) {
        echo '<tr>
+			<td>'.$row['id'].'</td>
 			<td>'.$row['short_description'].'</td>
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-			<td><input '.$row[''].' type=submit value=Claimed></td>
         </tr>';
     }
 ?>
+<div>
+	<form method="GET">
+		<input name='item#' type=text placeholder='Item Number'>
+		<input type=submit value='Mark Item as Claimed' onclick='delete();' >
+	
+<?php
+function delete(){
+$itemNum = $_GET["item#"];
+if (!$link)
+	{
+    	die('Could not connect: ' . mysqli_error());
+	}
+		$sql = "DELETE FROM Items where id='$itemNum'";
+	$query = mysqli_query($link, $sql);
+	if (!$query) {
+   die ('SQL Error: ' . mysqli_error($link));
+	}
+}
+?>
+</form>
+</div>
 
 </body>
 </html>
 
-</html>
