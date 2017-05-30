@@ -63,6 +63,7 @@ if (!$query) {
 	echo '<table>
         <thead>
             <tr>
+				<th>Type</th>
                 <th>Type</th>
 				<th>Description</th>
 				<th>Date Found</th>
@@ -73,11 +74,11 @@ if (!$query) {
         </thead>';
     while($row = mysqli_fetch_array($query)) {
        echo '<tr>
+			<td>'.$row['id'].'</td>
 			<td>'.$row['short_description'].'</td>
             <td>'.$row['long_description'].'</td>
 			<td>'.$row['date_found'].'</td>
 			<td>'.$row['Image'].'</td>
-			<td><form method="POST" action = "delete_row.php"><input '.$row[''].' type=submit value=Claimed onclick="delete_row"></form></td>
 			</tr>';
     }
 ?>
@@ -119,6 +120,30 @@ if (!$query) {
 		<input id="submit_button" type="submit" value="Submit Item" />
 	</div>
 </form>
+<!--<div>
+	<form method="GET">
+		<input name='item#' type=text placeholder='Item Number'>
+		<input type=submit value='Mark Item as Claimed'>
+
+<?php
+
+//$itemNum = $_GET["item#"];
+//if (!$link)
+//	{
+//    	die('Could not connect: ' . mysqli_error());
+//	}
+//		$sql = "DELETE FROM Items where id='$itemNum'";
+//	$query = mysqli_query($link, $sql);
+//	if (!$query) {
+//   die ('SQL Error: ' . mysqli_error($link));
+//	}
+//	if(isset($_GET['item#'])){
+//		echo "<meta http-equiv='refresh' content='0'>";
+//	}
+//
+//?>
+</form>
+</div>-->
 		
 </body>
 </html>

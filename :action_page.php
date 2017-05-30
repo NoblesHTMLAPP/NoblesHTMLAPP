@@ -67,6 +67,7 @@ if (!$query) {
 		<input type=submit value='Mark Item as Claimed'>
 	
 <?php
+
 $itemNum = $_GET["item#"];
 if (!$link)
 	{
@@ -80,6 +81,7 @@ if (!$link)
 	if(isset($_GET['item#'])){
 		echo "<meta http-equiv='refresh' content='0'>";
 	}
+
 ?>
 </form>
 </div>
